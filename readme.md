@@ -2,6 +2,9 @@
 
 This API converts prices to the local currency based on the user's location (150+ countries). It provides exchange rates and currency symbols for easy integration into e-commerce websites.
 
+### Llive url
+ https://geo-currency-api.onrender.com
+
 ## Endpoints
 
 ### 1. Default Currency Conversion
