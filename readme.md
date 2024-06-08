@@ -1,6 +1,6 @@
 # Currency Conversion API
 
-This API converts prices to the local currency based on the user's location. It provides exchange rates and currency symbols for easy integration into e-commerce websites.
+This API converts prices to the local currency based on the user's location (150+ countries). It provides exchange rates and currency symbols for easy integration into e-commerce websites.
 
 ## Endpoints
 
