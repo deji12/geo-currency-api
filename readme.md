@@ -74,7 +74,7 @@ To install and run the API, follow these steps:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/currency-conversion-api.git
+    git clone https://github.com/deji12/currency-conversion-api.git
     ```
 2. Navigate to the project directory:
     ```sh
