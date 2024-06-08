@@ -6,6 +6,58 @@ from django.http import HttpResponse
 import json
 from rest_framework.exceptions import ValidationError
 
+@api_view(["GET"])
+def index(request):
+    response_data = {
+    
+        "endpoints": [
+            {
+                "endpoint": "/geo-currency/",
+                "description": "Converts the price from USD to the local currency based on the user's location.",
+                "method": "GET",
+                "example_response": {
+                    "status": "success",
+                    "data": {
+                        "base": "USD",
+                        "convertedTo": "NGN",
+                        "rate": 1471.70463884,
+                        "currency_symbol": "₦"
+                    },
+                    "user_location": {
+                        "country": "Nigeria",
+                        "countryCode": "NG",
+                        "city": "Lagos"
+                    }
+                }
+            },
+            {
+                "endpoint": "/geo-currency/{currency}/",
+                "description": "Converts the price from the specified currency to the local currency based on the user's location.",
+                "method": "GET",
+                "parameters": {
+                    "currency": "The currency code to convert from (e.g., EUR, GBP, JPY)."
+                },
+                "example_response": {
+                    "status": "success",
+                    "data": {
+                        "base": "EUR",
+                        "convertedTo": "NGN",
+                        "rate": 1631.59510503,
+                        "currency_symbol": "₦"
+                    },
+                    "user_location": {
+                        "country": "Nigeria",
+                        "countryCode": "NG",
+                        "city": "Lagos"
+                    }
+                }
+            }
+        ],
+        "live_url": "https://geo-currency-api.onrender.com"
+    }
+
+    return Response(response_data)
+
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
@@ -68,7 +120,7 @@ def get_currency_location_conversion_data(request):
             "rate": conversion_rate,
             "currency_symbol": country_data[1]
         },
-        "user": {
+        "user_location": {
             "country": location_data["country"],
             "countryCode": location_data["countryCode"],
             "city": location_data["city"]
@@ -90,7 +142,7 @@ def get_currency_location_conversion_data_with_from_currency(request, from_curre
             "rate": conversion_rate,
             "currency_symbol": country_data[1]
         },
-        "user": {
+        "user_location": {
             "country": location_data["country"],
             "countryCode": location_data["countryCode"],
             "city": location_data["city"]

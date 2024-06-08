@@ -9,7 +9,7 @@ This API converts prices to the local currency based on the user's location (150
 
 ### 1. Default Currency Conversion
 
-**Endpoint:** `/`
+**Endpoint:** `/geo-currency/`
 
 **Method:** `GET`
 
@@ -25,7 +25,7 @@ This API converts prices to the local currency based on the user's location (150
         "rate": 1471.70463884,
         "currency_symbol": "₦"
     },
-    "user": {
+    "user_location": {
         "country": "Nigeria",
         "countryCode": "NG",
         "city": "Lagos"
@@ -34,7 +34,7 @@ This API converts prices to the local currency based on the user's location (150
 ```
 
 ### 2. Specific Currency Conversion
-**Endpoint:** `/`
+**Endpoint:** `/geo-currency/{currency/}`
 
 **Method:** `GET`
 
@@ -55,7 +55,7 @@ Example: /EUR/
         "rate": 1631.59510503,
         "currency_symbol": "₦"
     },
-    "user": {
+    "user_location": {
         "country": "Nigeria",
         "countryCode": "NG",
         "city": "Lagos"
