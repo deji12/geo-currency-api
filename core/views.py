@@ -16,9 +16,8 @@ def get_client_ip(request):
 
 def locate_client(request):
 
-    # ip = get_client_ip(request)
-    ip = '102.89.22.30'
-
+    ip = get_client_ip(request)
+   
     request = requests.get(f'http://ip-api.com/json/{ip}')
     location_data_one = request.text
     location_data = json.loads(location_data_one)
