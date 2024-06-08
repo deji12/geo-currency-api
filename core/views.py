@@ -7,7 +7,7 @@ import json
 from rest_framework.exceptions import ValidationError
 
 @api_view(["GET"])
-def index(request):
+def Documentation(request):
     response_data = {
     
         "endpoints": [
